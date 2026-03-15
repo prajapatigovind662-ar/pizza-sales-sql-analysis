@@ -1,7 +1,7 @@
 # 🍕 Pizza Sales Analysis (SQL Project)
 
 ## 📌 Project Overview
-This project analyzes pizza sales data using SQL to uncover meaningful business insights. The analysis focuses on understanding revenue performance, identifying top-selling pizzas, analyzing category-wise contributions, and tracking sales trends over time. The goal is to demonstrate how SQL can transform raw transactional data into actionable insights for data-driven decision-making.
+This project analyzes pizza sales data using SQL to uncover meaningful business insights. The analysis focuses on revenue performance, identifying top-selling pizzas, analyzing category contributions, and understanding sales trends over time. The goal is to demonstrate how SQL can transform raw transactional data into actionable insights for data-driven decision-making.
 
 ---
 
@@ -15,76 +15,112 @@ This project analyzes pizza sales data using SQL to uncover meaningful business 
 ---
 
 ## 🗂 Dataset Description
-The dataset consists of four related tables:
 
 ### Orders
 Contains information about each order.
-- order_id
-- order_date
-- order_time
+
+| Column | Description |
+|------|-------------|
+| order_id | Unique ID for each order |
+| order_date | Date of the order |
+| order_time | Time when the order was placed |
 
 ### Order_Details
-Contains the details of pizzas included in each order.
-- order_details_id
-- order_id
-- pizza_id
-- quantity
+Contains pizza order details.
+
+| Column | Description |
+|------|-------------|
+| order_details_id | Unique order details ID |
+| order_id | Reference to order |
+| pizza_id | Reference to pizza |
+| quantity | Number of pizzas ordered |
 
 ### Pizzas
-Contains pizza size and pricing information.
-- pizza_id
-- pizza_type_id
-- size
-- price
+Contains pizza pricing information.
+
+| Column | Description |
+|------|-------------|
+| pizza_id | Unique pizza ID |
+| pizza_type_id | Reference to pizza type |
+| size | Pizza size |
+| price | Price of the pizza |
 
 ### Pizza_Types
-Contains pizza name, category, and ingredients.
-- pizza_type_id
-- name
-- category
-- ingredients
+Contains pizza category and ingredients.
+
+| Column | Description |
+|------|-------------|
+| pizza_type_id | Unique pizza type ID |
+| name | Pizza name |
+| category | Pizza category |
+| ingredients | Ingredients used |
 
 ---
 
 ## 🛠 Tools Used
-- SQL (MySQL / PostgreSQL)
-- GitHub
-- PowerPoint / Canva for presentation
+- SQL (MySQL / PostgreSQL)  
+- GitHub  
+- PowerPoint / Canva  
 
 ---
 
-## 📊 Key Analysis Performed
-The following analysis was performed using SQL:
+## 📊 Key Analysis
+The following SQL analysis was performed:
 
-- Total revenue calculation using quantity and price
-- Category-wise revenue contribution
-- Identification of top 3 pizzas in each category using `RANK()`
-- Cumulative revenue analysis using `SUM() OVER`
+- Revenue calculation using quantity and price  
+- Category-wise revenue contribution  
+- Top 3 pizzas per category using `RANK()` window function  
+- Cumulative revenue analysis using `SUM() OVER` window function  
 
 ---
 
 ## 📈 Key Insights
-- Certain pizza categories contribute significantly to overall revenue.
-- A small number of pizzas generate a large share of total sales.
-- Top 3 pizzas in each category act as major revenue drivers.
-- Revenue trends show consistent growth over time.
+- Certain pizza categories generate the highest revenue.  
+- A small number of pizzas contribute significantly to total sales.  
+- The top 3 pizzas in each category act as major revenue drivers.  
+- Sales trends show consistent revenue growth over time.  
 
 ---
 
 ## 🚀 Future Scope
-- Build interactive dashboards using Power BI or Tableau
-- Perform deeper analysis of customer ordering behavior
-- Analyze seasonal sales patterns for better forecasting
+- Build interactive dashboards using **Power BI or Tableau**  
+- Analyze customer ordering patterns  
+- Study seasonal sales trends for better forecasting  
 
 ---
 
 ## 💡 Skills Demonstrated
-- SQL Joins
-- Aggregations (SUM, GROUP BY)
-- Subqueries
-- Window Functions (RANK, SUM OVER)
-- Data Analysis & Business Insights
+- SQL Joins  
+- Aggregate Functions  
+- Window Functions  
+- Data Analysis  
+- Business Insight Generation  
 
 ---
 
 ## 📂 Project Structure
+
+```
+Pizza-Sales-Analysis-SQL
+│
+├── dataset
+│   ├── orders.csv
+│   ├── order_details.csv
+│   ├── pizzas.csv
+│   └── pizza_types.csv
+│
+├── sql_queries
+│   └── pizza_sales_analysis.sql
+│
+├── presentation
+│   └── pizza_sales_analysis.pptx
+│
+└── README.md
+```
+
+---
+
+## 📌 Conclusion
+This project demonstrates how SQL can be used to analyze transactional sales data and generate meaningful business insights. The analysis highlights revenue drivers, product performance, and sales trends that support better business decisions.
+
+⭐ If you found this project helpful, feel free to star the repository.
